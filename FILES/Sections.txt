@@ -10,10 +10,11 @@ Hero
   -inquire now button
 
 About Us
+  -About our company
 
 Some of Our Products
-  - Gallery ?
-  - Portfolio
+  - Gallery of products
+  - Portfolio of successful transactions
 
 Some of our clients
   - Logo and Name of Company
@@ -21,15 +22,16 @@ Some of our clients
 Get in touch
   - Number
   - Facebook
-  - Email
-  - Email Form
+  - Email address
+  - Address
   - Google Maps/Location
+  - Email Form
 
 Footer
   -inquire now button
   -contact info (simple mode)
-  ALAS 2024 C
+  -ALAS 2024 C
 
 MISC
-  -Floating button (arrow up)
+  -Floating button (arrow up) located at right side
                           
