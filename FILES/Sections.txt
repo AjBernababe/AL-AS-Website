@@ -1,0 +1,35 @@
+navbar
+  - logo
+  - section links
+  - inquire now button
+
+Hero
+  -Logo
+  -Company Name
+  -Short quote?
+  -inquire now button
+
+About Us
+
+Some of Our Products
+  - Gallery ?
+  - Portfolio
+
+Some of our clients
+  - Logo and Name of Company
+
+Get in touch
+  - Number
+  - Facebook
+  - Email
+  - Email Form
+  - Google Maps/Location
+
+Footer
+  -inquire now button
+  -contact info (simple mode)
+  ALAS 2024 C
+
+MISC
+  -Floating button (arrow up)
+                          
