@@ -5,81 +5,201 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AL-AS Specialized Goods</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="icon" href="./assets/misc/alas-logo-S.ico" type="image/x-icon">
 </head>
 
 <body>
   <!-- Navbar Section -->
-  <nav class="navbar navbar-expand-lg sticky-top bg-white">
+  <nav class="navbar navbar-expand-lg sticky-top bg-light">
     <div class="container-lg">
       <a class="navbar-brand" href="#">
         <img id="navbar-logo" src="./assets/images/companyLogo/alas-logo-lnd-clr.png" alt="Company Logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item mx-lg-3"><a class="nav-link fw-bold" href="#home">Home</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link fw-bold" href="#about">About Us</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link fw-bold" href="#products">Products</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link fw-bold" href="#clients">Clients</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link fw-bold" href="#contact">Contact Us</a></li>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-lg-3"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item mx-lg-3"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item mx-lg-3"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item mx-lg-3"><a class="nav-link" href="#clients">Clients</a></li>
+          <li class="nav-item mx-lg-3"><a class="nav-link" href="#contact">Contact Us</a></li>
         </ul>
-        <a class="btn px-lg-4 py-lg-2 btn-primary" href="#contact">Inquire Now</a>
+        <a class="btn px-lg-4 btn-primary ms-lg-3" href="#contact">Inquire Now</a>
       </div>
     </div>
   </nav>
 
   <!-- Body -->
-  <div class="container">
-    <div id="home" class="section">
-      <div class="box"></div>
-    </div>
-    <div id="about" class="section">
-      <div class="box"></div>
-    </div>
-    <div id="products" class="section">
-      <div class="box"></div>
-    </div>
-    <div id="clients" class="section">
-      <div class="box"></div>
-    </div>
-    <div id="contact" class="section">
-      <div class="box"></div>
+  <div id="home">
+    <div class="box bg-light">
+      <div class="container text-center">
+        <h1 class="display-4">Welcome to Our Website</h1>
+        <p class="lead">Discover our products and services.</p>
+        <img src="https://via.placeholder.com/800x400" class="img-fluid rounded" alt="Welcome Image">
+        <div class="mt-4">
+          <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Footer Section -->
-  <footer class="d-flex justify-content-between align-items-center py-3 my-4 border-top bg-dark text-white">
+  <!-- About Section -->
+  <div id="about" class="section">
+    <div class="box bg-dark-subtle text-dark">
+      <div class="container">
+        <h2 class="text-center">About Us</h2>
+        <p>We are a leading company in providing excellent products and services. Our team of experts is dedicated to delivering innovative solutions tailored to meet the needs of our clients.</p>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Team Member">
+              <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="card-text">CEO & Founder</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Team Member">
+              <div class="card-body">
+                <h5 class="card-title">Jane Smith</h5>
+                <p class="card-text">Chief Operating Officer</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Team Member">
+              <div class="card-body">
+                <h5 class="card-title">Mike Johnson</h5>
+                <p class="card-text">Head of Marketing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Section -->
+  <div id="products" class="section">
+    <div class="box bg-light">
+      <div class="container">
+        <h2 class="text-center">Our Products</h2>
+        <p>Explore our diverse range of products, designed to meet the needs of various industries and applications.</p>
+        <div class="row mt-4">
+          <div class="col-md-3">
+            <div class="card shadow-sm">
+              <img src="https://via.placeholder.com/200" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                <h5 class="card-title">Product 1</h5>
+                <p class="card-text">A brief description of Product 1.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card shadow-sm">
+              <img src="https://via.placeholder.com/200" class="card-img-top" alt="Product 2">
+              <div class="card-body">
+                <h5 class="card-title">Product 2</h5>
+                <p class="card-text">A brief description of Product 2.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card shadow-sm">
+              <img src="https://via.placeholder.com/200" class="card-img-top" alt="Product 3">
+              <div class="card-body">
+                <h5 class="card-title">Product 3</h5>
+                <p class="card-text">A brief description of Product 3.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card shadow-sm">
+              <img src="https://via.placeholder.com/200" class="card-img-top" alt="Product 4">
+              <div class="card-body">
+                <h5 class="card-title">Product 4</h5>
+                <p class="card-text">A brief description of Product 4.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clients Section -->
+  <div id="clients" class="section">
+    <div class="box bg-dark-subtle text-dark">
+      <div class="container">
+        <h2 class="text-center">Our Clients</h2>
+        <p>We are proud to have worked with a diverse range of clients across different sectors. Here are a few of them:</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-dark-subtle"><strong>Client A</strong> - Industry Leader in Technology</li>
+          <li class="list-group-item bg-dark-subtle"><strong>Client B</strong> - Innovative Financial Solutions</li>
+          <li class="list-group-item bg-dark-subtle"><strong>Client C</strong> - Healthcare Provider</li>
+          <li class="list-group-item bg-dark-subtle"><strong>Client D</strong> - Retail and E-commerce</li>
+        </ul>
+        <div class="mt-4">
+          <a href="#" class="btn btn-secondary">View More Clients</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact" class="section">
+    <div class="box bg-light">
+      <div class="container">
+        <h2 class="text-center">Contact Us</h2>
+        <p>We'd love to hear from you! Please fill out the form below to get in touch with our team.</p>
+        <form class="mt-4">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-3 bg-dark" data-bs-theme="dark">
     <div class="container">
-      <p class="mb-0">© 2024 Company, Inc</p>
-      <a href="/" class="d-flex align-items-center justify-content-center mb-3 mb-md-0 text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-      </a>
-      <ul class="nav justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-tertiary">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link px-2 text-body-tertiary">About Us</a></li>
+        <li class="nav-item"><a href="#products" class="nav-link px-2 text-body-tertiary">Products</a></li>
+        <li class="nav-item"><a href="#clients" class="nav-link px-2 text-body-tertiary">Clients</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link px-2 text-body-tertiary">Contact Us</a></li>
       </ul>
+      <p class="text-center text-body-tertiary">© 2024 AL-AS, Inc</p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="./assets/js/index.js"></script>
 </body>
 

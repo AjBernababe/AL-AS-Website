@@ -8,6 +8,12 @@ body {
   transition: box-shadow 0.8s ease;
 }
 
+@media (min-width: 992px) {
+  .navbar {
+    height: 100px;
+  }
+}
+
 .navbar-sticky {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -41,12 +47,17 @@ body {
 
 /* Box styling */
 .box {
-  height: 700px;
-  border: 1px solid gray;
-  margin-bottom: 20px;
+  height: 900px;
+  padding-top: 50px;
 }
 
 /* Section for scroll margins */
 .section {
-  scroll-margin-top: 90.28px;
+  scroll-margin-top: 332px;
+}
+
+@media (min-width: 992px) {
+  .section {
+    scroll-margin-top: 100px;
+  }
 }
