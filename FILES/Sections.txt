@@ -1,22 +1,24 @@
 navbar
   - logo
   - section links
-  - inquire now button
+  - Inquire Now button
 
 Hero
   -Logo
   -Company Name
   -Short quote?
-  -inquire now button
+  -Inquire Now button
 
 About Us
   -About our company
 
-Some of Our Products
+Mission / Vision
+
+Our Products
   - Gallery of products
   - Portfolio of successful transactions
 
-Some of our clients
+Our clients
   - Logo and Name of Company
 
 Get in touch
@@ -28,10 +30,10 @@ Get in touch
   - Email Form
 
 Footer
-  -inquire now button
+  -Inquire Now button
   -contact info (simple mode)
   -ALAS 2024 C
 
 MISC
-  -Floating button (arrow up) located at right side
+  -Floating button (arrow up) located on right side
                           
