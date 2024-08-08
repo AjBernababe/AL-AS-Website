@@ -1,17 +1,52 @@
+/* General styling */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
+/* Navbar styles */
+.navbar {
+  transition: box-shadow 0.8s ease;
+}
+
+.navbar-sticky {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar logo */
 #navbar-logo {
   width: 150px;
 }
 
+/* Navigation link hover effect */
+.nav-link:hover {
+  color: #ea1811;
+}
+
+/* Primary button styles */
+.btn-primary {
+  background-color: #ea1811;
+  border-color: #ea1811;
+}
+
+.btn-primary:hover {
+  background-color: #d5100e;
+  border-color: #d5100e;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: #c11411 !important;
+  border-color: #c11411 !important;
+}
+
+/* Box styling */
 .box {
   height: 700px;
   border: 1px solid gray;
   margin-bottom: 20px;
 }
 
+/* Section for scroll margins */
 .section {
-  scroll-margin-top: 76px;
+  scroll-margin-top: 90.28px;
 }
