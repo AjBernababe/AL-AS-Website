@@ -1,9 +1,17 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 #navbar-logo {
-  width: 50px;
+  width: 150px;
 }
 
 .box {
-  height: 600px;
+  height: 700px;
   border: 1px solid gray;
-  margin: 20px 0;
+  margin-bottom: 20px;
+}
+
+.section {
+  scroll-margin-top: 76px;
 }
