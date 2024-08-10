@@ -1,17 +1,14 @@
 /* General styling */
-body {
+html {
   font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 /* Navbar styles */
 .navbar {
   transition: box-shadow 0.8s ease;
-}
-
-@media (min-width: 992px) {
-  .navbar {
-    height: 100px;
-  }
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
 .navbar-sticky {
@@ -20,44 +17,63 @@ body {
 
 /* Navbar logo */
 #navbar-logo {
-  width: 150px;
+  height: 74px;
 }
 
 /* Navigation link hover effect */
-.nav-link:hover {
-  color: #ea1811;
+.nav-link:hover,
+.hover-effect {
+  color: rgb(234, 24, 17);
 }
 
 /* Primary button styles */
 .btn-primary {
-  background-color: #ea1811;
-  border-color: #ea1811;
+  background-color: rgb(234, 24, 17);
+  border-color: rgb(234, 24, 17);
 }
 
 .btn-primary:hover {
-  background-color: #d5100e;
-  border-color: #d5100e;
+  background-color: rgb(220, 24, 17);
+  border-color: rgb(220, 24, 17);
 }
 
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: #c11411 !important;
-  border-color: #c11411 !important;
+  background-color: rgb(200, 24, 17) !important;
+  border-color: rgb(200, 24, 17) !important;
 }
 
-/* Box styling */
-.box {
-  height: 900px;
-  padding-top: 50px;
-}
-
-/* Section for scroll margins */
+/* Section styles */
 .section {
-  scroll-margin-top: 332px;
+  height: 1000px;
+  scroll-margin-top: 100px;
 }
 
-@media (min-width: 992px) {
-  .section {
-    scroll-margin-top: 100px;
-  }
+/* Specific section styling */
+#home {
+  padding-top: 100px;
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff; /* Customize as needed */
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#scrollToTop.show {
+  opacity: 1;
+  visibility: visible;
 }
