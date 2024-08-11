@@ -2,7 +2,7 @@
 const toggleNavbarShadow = () => {
   document
     .querySelector(".navbar")
-    ?.classList.toggle("navbar-sticky", window.scrollY > 50);
+    ?.classList.toggle("navbar-sticky", window.scrollY > 100);
 };
 
 // Collapse the navbar
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollToTopBtn = document.getElementById("scrollToTop");
 
   const toggleVisibility = () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 100) {
       // Adjust the scroll threshold as needed
       scrollToTopBtn.classList.add("show");
     } else {
