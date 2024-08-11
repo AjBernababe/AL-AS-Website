@@ -15,12 +15,12 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar logo */
 .navbar-brand {
   box-sizing: content-box;
   height: 70px;
   padding: 7px 0;
 }
+
 #navbar-logo {
   height: 100%;
 }
@@ -54,7 +54,6 @@ html {
   scroll-margin-top: 100px;
 }
 
-/* Specific section styling */
 #home {
   padding-top: 100px;
 }

@@ -1,8 +1,9 @@
 // Toggle navbar shadow based on scroll position
 const toggleNavbarShadow = () => {
-  document
-    .querySelector(".navbar")
-    ?.classList.toggle("navbar-sticky", window.scrollY > 100);
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    navbar.classList.toggle("navbar-sticky", window.scrollY > 100);
+  }
 };
 
 // Collapse the navbar
@@ -34,8 +35,8 @@ const updateHoverEffect = () => {
 
 // Apply initial hover effect to the first section if in view
 const initialHighlight = () => {
-  const [firstSection] = document.querySelectorAll(".section");
-  const [firstLink] = document.querySelectorAll(".nav-link");
+  const firstSection = document.querySelector(".section");
+  const firstLink = document.querySelector(".nav-link");
 
   if (firstSection && firstLink) {
     const { offsetTop: sectionTop, offsetHeight: sectionHeight } = firstSection;
@@ -59,20 +60,12 @@ document
 window.addEventListener("load", initialHighlight);
 window.addEventListener("resize", initialHighlight);
 
-// Initial highlight update
-initialHighlight();
-
-// script.js
+// Scroll to Top Button functionality
 document.addEventListener("DOMContentLoaded", () => {
   const scrollToTopBtn = document.getElementById("scrollToTop");
 
   const toggleVisibility = () => {
-    if (window.scrollY > 100) {
-      // Adjust the scroll threshold as needed
-      scrollToTopBtn.classList.add("show");
-    } else {
-      scrollToTopBtn.classList.remove("show");
-    }
+    scrollToTopBtn.classList.toggle("show", window.scrollY > 100);
   };
 
   const scrollToTop = () => {
