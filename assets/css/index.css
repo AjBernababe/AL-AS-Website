@@ -17,8 +17,8 @@ html {
 
 .navbar-brand {
   box-sizing: content-box;
-  height: 70px;
-  padding: 7px 0;
+  height: 60px;
+  padding: 12px 0;
 }
 
 #navbar-logo {
