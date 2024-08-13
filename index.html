@@ -88,10 +88,7 @@
         </div>
 
         <div class="col-lg-6">
-          <form id="contactForm" name="contact" class="needs-validation" novalidate netlify method="POST" data-netlify="true">
-
-            <!-- Hidden field for Netlify form handling -->
-            <input type="hidden" name="form-name" value="contact">
+          <form id="contactForm" name="contact" class="needs-validation" novalidate netlify netlify-honeypot="bot-field">
 
             <!-- Hidden honeypot field to help prevent spam -->
             <input type="hidden" name="bot-field" />
