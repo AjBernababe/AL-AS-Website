@@ -79,62 +79,52 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleVisibility();
 });
 
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const loading = document.getElementById("loading");
+  const errorMessage = document.getElementById("errorMessage");
+  const sentMessage = document.getElementById("sentMessage");
 
-    var form = event.target;
-    var formData = new FormData(form);
-    var loading = document.getElementById("loading");
-    var errorMessage = document.getElementById("errorMessage");
-    var sentMessage = document.getElementById("sentMessage");
+  // Add event listener to the form
+  form.addEventListener(
+    "submit",
+    function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault(); // Prevent form submission
+        event.stopPropagation(); // Stop event propagation
+      } else {
+        event.preventDefault(); // Prevent the default form submission
 
-    // Reset messages
-    loading.classList.remove("d-none");
-    errorMessage.classList.add("d-none");
-    sentMessage.classList.add("d-none");
+        var formData = new FormData(form);
 
-    fetch("/", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          form.reset(); // Reset form fields
-          loading.classList.add("d-none"); // Hide loading indicator
-          sentMessage.classList.remove("d-none"); // Show success message
-        } else {
-          throw new Error("Form submission failed.");
-        }
-      })
-      .catch((error) => {
-        loading.classList.add("d-none"); // Hide loading indicator
-        errorMessage.textContent =
-          "There was an error submitting your form. Please try again.";
-        errorMessage.classList.remove("d-none"); // Show error message
-      });
-  });
+        // Reset messages
+        loading.classList.remove("d-none");
+        errorMessage.classList.add("d-none");
+        sentMessage.classList.add("d-none");
 
-(() => {
-  "use strict";
+        fetch("/", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.reset(); // Reset form fields
+              loading.classList.add("d-none"); // Hide loading indicator
+              sentMessage.classList.remove("d-none"); // Show success message
+            } else {
+              throw new Error("Form submission failed.");
+            }
+          })
+          .catch((error) => {
+            loading.classList.add("d-none"); // Hide loading indicator
+            errorMessage.textContent =
+              "There was an error submitting your form. Please try again.";
+            errorMessage.classList.remove("d-none"); // Show error message
+          });
+      }
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll(".needs-validation");
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach((form) => {
-    form.addEventListener(
-      "submit",
-      (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-
-        form.classList.add("was-validated");
-      },
-      false
-    );
-  });
-})();
+      form.classList.add("was-validated"); // Add validation styles
+    },
+    false
+  );
+});
