@@ -78,3 +78,40 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial visibility check
   toggleVisibility();
 });
+
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    var form = event.target;
+    var formData = new FormData(form);
+    var loading = document.getElementById("loading");
+    var errorMessage = document.getElementById("errorMessage");
+    var sentMessage = document.getElementById("sentMessage");
+
+    // Reset messages
+    loading.classList.remove("d-none");
+    errorMessage.classList.add("d-none");
+    sentMessage.classList.add("d-none");
+
+    fetch("/", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          form.reset(); // Reset form fields
+          loading.classList.add("d-none"); // Hide loading indicator
+          sentMessage.classList.remove("d-none"); // Show success message
+        } else {
+          throw new Error("Form submission failed.");
+        }
+      })
+      .catch((error) => {
+        loading.classList.add("d-none"); // Hide loading indicator
+        errorMessage.textContent =
+          "There was an error submitting your form. Please try again.";
+        errorMessage.classList.remove("d-none"); // Show error message
+      });
+  });
