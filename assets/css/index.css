@@ -48,12 +48,6 @@ html {
   border-color: rgb(200, 24, 17) !important;
 }
 
-/* Section styles */
-.section {
-  height: 1000px;
-  scroll-margin-top: 100px;
-}
-
 #home {
   padding-top: 100px;
 }
@@ -92,4 +86,22 @@ footer {
 
 .footer-icon {
   height: 20px;
+}
+
+.section {
+  scroll-margin-top: 100px;
+}
+
+.box {
+  height: 1000px;
+}
+
+.contact-block {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  height: 100%;
+}
+
+.facebook {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent (matches other text color) */
 }
