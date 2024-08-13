@@ -85,13 +85,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorMessage = document.getElementById("errorMessage");
   const sentMessage = document.getElementById("sentMessage");
 
-  // Add event listener to the form
   form.addEventListener(
     "submit",
     function (event) {
       if (!form.checkValidity()) {
         event.preventDefault(); // Prevent form submission
         event.stopPropagation(); // Stop event propagation
+        form.classList.add("was-validated"); // Add validation styles
       } else {
         event.preventDefault(); // Prevent the default form submission
 
@@ -111,6 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
               form.reset(); // Reset form fields
               loading.classList.add("d-none"); // Hide loading indicator
               sentMessage.classList.remove("d-none"); // Show success message
+
+              // Remove validation styles after successful submission
+              form.classList.remove("was-validated");
             } else {
               throw new Error("Form submission failed.");
             }
@@ -122,8 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
             errorMessage.classList.remove("d-none"); // Show error message
           });
       }
-
-      form.classList.add("was-validated"); // Add validation styles
     },
     false
   );
