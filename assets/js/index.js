@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  AOS.init({
+    once: true, // Animation will only happen once
+  });
+
   const navbar = document.querySelector(".navbar");
   const navbarCollapse = document.querySelector(".navbar-collapse");
   const scrollToTopBtn = document.getElementById("scrollToTop");
