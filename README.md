@@ -10,7 +10,8 @@ Our business specializes in supplying high-quality plastic goods in large quanti
 
 - **Responsive Design**: The landing page is designed to be fully responsive and look great on all devices.
 - **Bootstrap Integration**: Utilizes Bootstrap for a modern, clean design and responsive layout.
+- **AOS Integration**: Utilizes AOS for a modern website animation.
 - **Performance Optimized**: Optimized for fast loading times with minified CSS and JS.
-- **Contact Form**: Includes a contact form for inquiries and lead generation.
 - **SEO Friendly**: Basic SEO optimizations for better search engine visibility.
+- **Contact Form**: Includes a contact form for inquiries and lead generation.
 - **Google Maps Integration**: Embedded Google Maps to display our business location.

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateHoverEffect = () => {
-    const scrollPosition = window.scrollY + window.innerHeight;
+    const scrollPosition = window.scrollY + 100;
     const sections = document.querySelectorAll(".section");
     const links = document.querySelectorAll(".nav-link");
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const { offsetTop: sectionTop, offsetHeight: sectionHeight } = section;
       const sectionBottom = sectionTop + sectionHeight;
 
-      if (scrollPosition > sectionTop && scrollPosition < sectionBottom) {
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
         links[index]?.classList.add("hover-effect");
       }
     });
