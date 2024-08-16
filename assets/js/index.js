@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const { offsetTop: sectionTop, offsetHeight: sectionHeight } = section;
       const sectionBottom = sectionTop + sectionHeight;
 
+      console.log(sections, index, section, sectionTop, sectionHeight);
+
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
         links[index]?.classList.add("hover-effect");
       }
@@ -42,20 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const initialHighlight = () => {
-    const firstSection = document.querySelector(".section");
-    const firstLink = document.querySelector(".nav-link");
-
-    if (firstSection && firstLink) {
-      const { offsetTop: sectionTop, offsetHeight: sectionHeight } =
-        firstSection;
-      const sectionBottom = sectionTop + sectionHeight;
-      firstLink.classList.toggle(
-        "hover-effect",
-        window.scrollY + window.innerHeight > sectionTop &&
-          window.scrollY + window.innerHeight < sectionBottom
-      );
-    }
+    updateHoverEffect(); // Call the update function to set the initial highlight
   };
+
+  // Run the initialHighlight function when the page loads
+  window.addEventListener("load", initialHighlight);
+
+  // Update the hover effect as the user scrolls
+  window.addEventListener("scroll", updateHoverEffect);
 
   const toggleScrollToTopButton = () => {
     scrollToTopBtn.classList.toggle("show", window.scrollY > 100);
@@ -115,4 +111,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial visibility check for scroll-to-top button
   toggleScrollToTopButton();
+
+  for (let i = 0; i < 16; i++) {
+    const imageSrc = "/assets/images/products/" + i + ".png";
+    const altText = "Slide " + i;
+
+    const carouselItem = document.createElement("div");
+    carouselItem.className = "carousel-item " + (i == 0 ? "active" : "");
+
+    // Create an image element
+    const img = document.createElement("img");
+    img.src = imageSrc;
+    img.className = "d-block w-100";
+    img.alt = altText;
+
+    // Append image to the carousel item
+    carouselItem.appendChild(img);
+
+    // Append carousel item to the carousel-inner
+    document.querySelector(".carousel-inner").appendChild(carouselItem);
+  }
 });
