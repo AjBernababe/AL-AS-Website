@@ -130,3 +130,13 @@ footer {
 .contact-info i {
   font-size: 30px;
 }
+
+.carousel-item {
+  text-align: center;
+  height: 100vh;
+  max-height: 700px;
+}
+
+.carousel-item img {
+  height: 100%;
+}

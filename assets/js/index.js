@@ -112,23 +112,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial visibility check for scroll-to-top button
   toggleScrollToTopButton();
 
-  for (let i = 0; i < 16; i++) {
+  for (let i = 1; i < 16; i++) {
     const imageSrc = "/assets/images/products/" + i + ".png";
     const altText = "Slide " + i;
 
+    const indicator = document.createElement("button");
+    indicator.type = "button";
+    indicator.setAttribute("data-bs-target", "#carouselExampleCaptions");
+    indicator.setAttribute("data-bs-slide-to", i);
+    indicator.setAttribute("aria-label", `Slide ${i + 1}`);
+
     const carouselItem = document.createElement("div");
-    carouselItem.className = "carousel-item " + (i == 0 ? "active" : "");
+    carouselItem.className = "carousel-item";
 
     // Create an image element
     const img = document.createElement("img");
     img.src = imageSrc;
-    img.className = "d-block w-100";
     img.alt = altText;
 
     // Append image to the carousel item
     carouselItem.appendChild(img);
 
     // Append carousel item to the carousel-inner
+    document.querySelector(".carousel-indicators").appendChild(indicator);
     document.querySelector(".carousel-inner").appendChild(carouselItem);
   }
 });
