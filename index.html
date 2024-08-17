@@ -17,9 +17,10 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link href="./assets/css/index.css" rel="stylesheet">
@@ -27,23 +28,22 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-xl fixed-top bg-light">
+  <nav id="navbar" class="navbar navbar-expand-xl fixed-top" data-bs-theme="dark">
     <div class="container-lg">
       <a class="navbar-brand" href="#">
-        <img id="navbar-logo" src="./assets/images/companyLogo/alas-logo-lnd-clr.png" alt="Company Logo">
+        <img id="navbar-logo" src="./assets/images/companyLogo/alas-logo-lnd-clr-w.png" alt="Company Logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item mx-lg-3"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link" href="#products">Products</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link" href="#clients">Clients</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item mx-lg-3"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item mx-lg-3 my-2 my-lg-0"><a class="btn btn-primary" href="#contact">Inquire Now</a></li>
+          <li class="nav-item ms-lg-5"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item ms-lg-5"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item ms-lg-5"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item ms-lg-5"><a class="nav-link" href="#clients">Clients</a></li>
+          <li class="nav-item ms-lg-5"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item ms-lg-5"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -53,11 +53,16 @@
   <!-- Sections -->
 
   <!-- Home Section -->
-  <section id="home" class="section bg-light text-white text-center d-flex align-items-center justify-content-center py-5" style="height: 100vh; background-image: url('/assets/misc/temp.png'); background-size: cover; background-position: center;">
+  <section id="home" class="section d-flex align-items-center justify-content-start">
     <div class="container">
-      <h1 class="h1 display-3 fw-bold">Welcome to AL-AS Specialized Goods Trading</h1>
-      <p class="lead mt-4">Your Source for Top Quality Plastic Products at Unbeatable Prices</p>
-      <a href="#products" class="btn btn-primary btn-lg mt-4">Explore Our Products</a>
+      <div class="hero">
+        <h1>Elevate your business with <b>AL-AS</b></h1>
+
+        <div class="hero-button text-start">
+          <a href="#about"><button class="btn btn-outline-light">Get Started</button></a>
+          <a href="#contact"><button class="btn btn-primary">Inquire Now</button></a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -80,7 +85,7 @@
   </section>
 
   <!-- Products Section -->
-  <section id="products" class="section bg-light py-5">
+  <section id="products" class="section bg-light py-5" data-bs-theme="dark">
     <div class="text-center mb-5 container" data-aos="zoom-in-up" data-aos-duration="1000">
       <h2 class="h2">Exceptional Products, Exceptional Value</h2>
       <p class="lead">Delivering excellence and affordability to your business</p>
@@ -310,7 +315,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark pb-3" data-bs-theme="dark">
+  <footer class="bg-black pb-3" data-bs-theme="dark">
     <div class="container d-flex justify-content-between border-bottom align-items-center flex-column flex-sm-row">
       <div class="contact-info">
         <ul class="nav d-flex flex-column">
