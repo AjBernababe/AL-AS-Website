@@ -111,30 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial visibility check for scroll-to-top button
   toggleScrollToTopButton();
+});
 
-  for (let i = 1; i < 16; i++) {
-    const imageSrc = "/assets/images/products/" + i + ".png";
-    const altText = "Slide " + i;
+document.addEventListener("DOMContentLoaded", function () {
+  var navbar = document.getElementById("navbar");
+  var collapse = document.getElementById("navbarText");
 
-    const indicator = document.createElement("button");
-    indicator.type = "button";
-    indicator.setAttribute("data-bs-target", "#carouselExampleCaptions");
-    indicator.setAttribute("data-bs-slide-to", i);
-    indicator.setAttribute("aria-label", `Slide ${i + 1}`);
+  // Event listener for when the navbar collapses
+  collapse.addEventListener("shown.bs.collapse", function () {
+    navbar.classList.add("bg-black");
+  });
 
-    const carouselItem = document.createElement("div");
-    carouselItem.className = "carousel-item";
-
-    // Create an image element
-    const img = document.createElement("img");
-    img.src = imageSrc;
-    img.alt = altText;
-
-    // Append image to the carousel item
-    carouselItem.appendChild(img);
-
-    // Append carousel item to the carousel-inner
-    document.querySelector(".carousel-indicators").appendChild(indicator);
-    document.querySelector(".carousel-inner").appendChild(carouselItem);
-  }
+  // Event listener for when the navbar collapses
+  collapse.addEventListener("hidden.bs.collapse", function () {
+    navbar.classList.remove("bg-black");
+  });
 });
