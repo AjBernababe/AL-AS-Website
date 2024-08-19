@@ -167,11 +167,6 @@ footer {
   border-radius: 0%;
 }
 
-.about-image {
-  border-radius: 8%;
-  width: 100%;
-}
-
 .card {
   height: 300px;
   width: 300px;
@@ -184,4 +179,24 @@ footer {
 
 #products .carousel-item {
   text-align: center;
+}
+
+.highlight {
+  color: rgb(234, 24, 17);
+}
+
+#about .header .title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+  color: rgb(234, 24, 17);
+}
+
+#about .header .subtitle {
+  font-size: 3rem;
+  font-weight: 700;
+}
+#about .image img{
+  width: 100%;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
