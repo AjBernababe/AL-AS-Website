@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  AOS.init({
-    once: true, // Animation will only happen once
-  });
+  AOS.init({ once: true });
 
   const navbar = document.querySelector(".navbar");
   const navbarCollapse = document.querySelector(".navbar-collapse");
@@ -11,12 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorMessage = document.getElementById("errorMessage");
   const sentMessage = document.getElementById("sentMessage");
 
+  // Toggle navbar shadow based on scroll position
   const toggleNavbarShadow = () => {
     if (navbar) {
       navbar.classList.toggle("navbar-sticky", window.scrollY > 100);
     }
   };
 
+  // Collapse the navbar when clicking a nav link or button
   const collapseNavbar = () => {
     const bsCollapse =
       bootstrap.Collapse.getInstance(navbarCollapse) ||
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bsCollapse.hide();
   };
 
+  // Update hover effect on nav links based on scroll position
   const updateHoverEffect = () => {
     const scrollPosition = window.scrollY + 100;
     const sections = document.querySelectorAll(".section");
@@ -32,98 +33,94 @@ document.addEventListener("DOMContentLoaded", () => {
     links.forEach((link) => link.classList.remove("hover-effect"));
 
     sections.forEach((section, index) => {
-      const { offsetTop: sectionTop, offsetHeight: sectionHeight } = section;
-      const sectionBottom = sectionTop + sectionHeight;
+      const { offsetTop, offsetHeight } = section;
+      const sectionBottom = offsetTop + offsetHeight;
 
-      console.log(sections, index, section, sectionTop, sectionHeight);
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      if (scrollPosition >= offsetTop && scrollPosition < sectionBottom) {
         links[index]?.classList.add("hover-effect");
       }
     });
   };
 
-  const initialHighlight = () => {
-    updateHoverEffect(); // Call the update function to set the initial highlight
-  };
+  // Initial setup for hover effect
+  const initialHighlight = () => updateHoverEffect();
 
-  // Run the initialHighlight function when the page loads
-  window.addEventListener("load", initialHighlight);
-
-  // Update the hover effect as the user scrolls
-  window.addEventListener("scroll", updateHoverEffect);
-
-  const toggleScrollToTopButton = () => {
-    scrollToTopBtn.classList.toggle("show", window.scrollY > 100);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  form.addEventListener("submit", (event) => {
+  // Handle form submission
+  const handleFormSubmit = (event) => {
     if (!form.checkValidity()) {
       event.preventDefault();
       event.stopPropagation();
       form.classList.add("was-validated");
-    } else {
-      event.preventDefault();
-      const formData = new FormData(form);
-
-      loading.classList.remove("d-none");
-      errorMessage.classList.add("d-none");
-      sentMessage.classList.add("d-none");
-
-      fetch("/", { method: "POST", body: formData })
-        .then((response) => {
-          if (response.ok) {
-            form.reset();
-            loading.classList.add("d-none");
-            sentMessage.classList.remove("d-none");
-            form.classList.remove("was-validated");
-          } else {
-            throw new Error("Form submission failed.");
-          }
-        })
-        .catch(() => {
-          loading.classList.add("d-none");
-          errorMessage.textContent =
-            "There was an error submitting your form. Please try again.";
-          errorMessage.classList.remove("d-none");
-        });
+      return;
     }
-  });
 
+    event.preventDefault();
+    const formData = new FormData(form);
+
+    loading.classList.remove("d-none");
+    errorMessage.classList.add("d-none");
+    sentMessage.classList.add("d-none");
+
+    fetch("/", { method: "POST", body: formData })
+      .then((response) => {
+        if (response.ok) {
+          form.reset();
+          loading.classList.add("d-none");
+          sentMessage.classList.remove("d-none");
+          form.classList.remove("was-validated");
+        } else {
+          throw new Error("Form submission failed.");
+        }
+      })
+      .catch(() => {
+        loading.classList.add("d-none");
+        errorMessage.textContent =
+          "There was an error submitting your form. Please try again.";
+        errorMessage.classList.remove("d-none");
+      });
+  };
+
+  // Toggle visibility of scroll-to-top button
+  const toggleScrollToTopButton = () => {
+    scrollToTopBtn.classList.toggle("show", window.scrollY > 100);
+  };
+
+  // Smooth scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Event listeners
   window.addEventListener("scroll", () => {
     toggleNavbarShadow();
     updateHoverEffect();
     toggleScrollToTopButton();
   });
 
-  document
-    .querySelectorAll(".navbar-nav .nav-link, .navbar .btn")
-    .forEach((element) => element.addEventListener("click", collapseNavbar));
+  window.addEventListener("load", () => {
+    initialHighlight();
+    toggleScrollToTopButton(); // Initial check for scroll-to-top button visibility
+  });
 
-  window.addEventListener("load", initialHighlight);
   window.addEventListener("resize", initialHighlight);
 
   scrollToTopBtn.addEventListener("click", scrollToTop);
 
-  // Initial visibility check for scroll-to-top button
-  toggleScrollToTopButton();
-});
+  document
+    .querySelectorAll(".navbar-nav .nav-link, .navbar .btn")
+    .forEach((element) => element.addEventListener("click", collapseNavbar));
 
-document.addEventListener("DOMContentLoaded", function () {
-  var navbar = document.getElementById("navbar");
-  var collapse = document.getElementById("navbarText");
+  // Navbar background color on collapse
+  const navbarElement = document.getElementById("navbar");
+  const collapseElement = document.getElementById("navbarText");
 
-  // Event listener for when the navbar collapses
-  collapse.addEventListener("shown.bs.collapse", function () {
-    navbar.classList.add("bg-black");
-  });
+  collapseElement.addEventListener("shown.bs.collapse", () =>
+    navbarElement.classList.add("bg-black")
+  );
+  collapseElement.addEventListener("hidden.bs.collapse", () =>
+    navbarElement.classList.remove("bg-black")
+  );
 
-  // Event listener for when the navbar collapses
-  collapse.addEventListener("hidden.bs.collapse", function () {
-    navbar.classList.remove("bg-black");
-  });
+  // Handle form submission
+  form.addEventListener("submit", handleFormSubmit);
 });

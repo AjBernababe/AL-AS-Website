@@ -10,11 +10,6 @@ html {
   transition: background-color 0.5s;
 }
 
-.navbar .nav-link {
-  font-size: 20px;
-  color: white;
-}
-
 .navbar-sticky {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.8);
@@ -27,78 +22,197 @@ html {
   padding: 12px 0;
 }
 
-#navbar-logo {
+.navbar-brand img {
   height: 100%;
 }
 
-/* Navigation link hover effect */
+.navbar .nav-link {
+  font-size: 20px;
+  color: white;
+}
+
 .nav-link:hover,
 .hover-effect {
   color: rgb(234, 24, 17) !important;
   border-color: rgb(234, 24, 17) !important;
 }
 
-/* Primary button styles */
-.btn-primary {
-  background-color: rgb(234, 24, 17);
-  border-color: rgb(234, 24, 17);
-}
-
-.btn-primary:hover {
-  background-color: rgb(220, 24, 17);
-  border-color: rgb(220, 24, 17);
-}
-
-.btn-primary:active,
-.btn-primary:focus {
-  background-color: rgb(200, 24, 17) !important;
-  border-color: rgb(200, 24, 17) !important;
-}
-
-.section {
-  scroll-margin-top: 100px;
-}
-
+/* Home styles */
 #home {
-  height: 100vh;
+  padding-top: 100px;
   background-image: url("/assets/misc/AL-AS.png");
   background-size: cover;
   background-position: center;
 }
 
-.box {
-  height: 1000px;
+#home h1 {
+  max-width: 20ch;
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  font-size: 150px;
 }
 
-.facebook-icon {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent (matches other text color) */
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 100px; /* Adjust the size as needed */
+  }
 }
 
-footer {
-  font-size: 14px;
+@media (max-width: 576px) {
+  #home h1 {
+    font-size: 80px; /* Adjust the size as needed */
+  }
 }
 
-.footer-icon {
-  height: 14px;
+#home .highlight {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  display: inline-block;
 }
 
-.footer-logo {
-  height: 30px;
+.hero-button button {
+  font-size: 1.5rem;
 }
 
-.contact-block {
+@media (max-width: 768px) {
+  .hero-button button {
+    font-size: 1.2rem;
+  }
+}
+
+/* About styles */
+#about .header .title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+  color: rgb(234, 24, 17);
+}
+
+#about .header .subtitle {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+#about .paragraph p {
+  font-size: 1.2rem;
+}
+
+#about .image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+#about .choose-us .card {
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+#about .choose-us i {
+  font-size: 2.5rem;
+}
+
+/* Products styles */
+#products .carousel-item {
+  text-align: center;
+}
+
+#products .carousel-item img {
+  max-height: 75vh;
+  max-width: 100vw;
+}
+
+/* Clients styles */
+#clients img {
+  width: 100%;
+}
+
+/* Portfolio styles */
+#portfolio img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#portfolio .second-part a {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+
+#portfolio .second-part a .portfolio-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#portfolio .second-part a .portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#portfolio .hidden {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+/* Contact styles */
+#contact .contact-block {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   height: 100%;
   border-top: 3px solid rgb(234, 24, 17);
   border-bottom: 3px solid rgb(234, 24, 17);
 }
 
+#contact .contact-info h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#contact .contact-info p {
+  font-size: 14px;
+  margin: 0;
+}
+
+#contact .contact-info .form-header {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#contact .contact-info i {
+  font-size: 30px;
+}
+
+#contact .facebook-icon {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Footer styles */
+#footer {
+  font-size: 14px;
+}
+
+#footer img {
+  height: 1em;
+}
+
+#footer .footer-logo {
+  height: 30px;
+}
+
+/* Scroll to top button styles */
 #scrollToTop {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: rgb(234, 24, 17);
   border: none;
   color: white;
   width: 50px;
@@ -118,100 +232,31 @@ footer {
   visibility: visible;
 }
 
-.contact-info h3 {
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.contact-info p {
-  font-size: 14px;
-  margin: 0;
-}
-
-.contact-info .form-header {
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.contact-info i {
-  font-size: 30px;
-}
-
-#home .hero {
-  font-family: "Bebas Neue", sans-serif;
-  color: white;
-  font-size: 150px;
-  max-width: 20ch;
-  max-height: 80vh;
-}
-
-#home h1 {
-  padding-top: 100px;
-  font-size: inherit;
-}
-
-#home b {
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
-  color: rgb(234, 24, 17);
-}
-
-.hero-button button {
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-}
-
-.btn {
-  border-radius: 0%;
-}
-
-#products .carousel-item img {
-  max-height: 70vh;
-  max-width: 100vw;
-}
-
-#products .carousel-item {
-  text-align: center;
+/* Global styles */
+.section {
+  scroll-margin-top: 100px;
 }
 
 .highlight {
   color: rgb(234, 24, 17);
 }
 
-#about .header .title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 1.5rem;
-  color: rgb(234, 24, 17);
+.btn {
+  border-radius: 0;
 }
 
-#about .header .subtitle {
-  font-size: 3rem;
-  font-weight: 700;
+.btn-primary {
+  background-color: rgb(234, 24, 17) !important;
+  border-color: rgb(234, 24, 17) !important;
 }
 
-#about .paragraph p {
-  font-size: 1.2rem;
+.btn-primary:hover {
+  background-color: rgb(220, 24, 17) !important;
+  border-color: rgb(220, 24, 17) !important;
 }
 
-#about .image img {
-  width: 100%;
-  border-radius: 50px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card{
-  height: 100%;
-  border-radius: 20px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-}
-
-#about .choose-us i {
-  font-size: 2.5rem;
-}
-
-#portfolio img{
-  width: 100%;
-  object-fit: cover
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: rgb(200, 24, 17) !important;
+  border-color: rgb(200, 24, 17) !important;
 }
