@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  AOS.init({ once: true });
+  AOS.init({ once: true, duration: 1000 });
 
   const navbar = document.querySelector(".navbar");
   const navbarCollapse = document.querySelector(".navbar-collapse");

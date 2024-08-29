@@ -38,7 +38,7 @@ html {
 
 /* Home styles */
 #home {
-  padding-top: 100px;
+  height: 100vh;
   background-color: black;
   background-image: url("/assets/misc/AL-AS.webp");
   background-size: cover;
